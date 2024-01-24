@@ -17,7 +17,8 @@ router.get("/version", function (req, res) {
 
 // Redirect
 const request = require('request');
-BASE_URL = "http://internal-app-was-alb-1863869934.us-west-2.elb.amazonaws.com"
+//BASE_URL = "http://internal-app-was-alb-1863869934.us-west-2.elb.amazonaws.com"
+BASE_URL = "http://internal-app-was-alb-805350614.ap-southeast-1.elb.amazonaws.com"
 
 CLASSIFIY_IMAGE = "/classify/image"
 HEALTH = "/health"
@@ -37,7 +38,7 @@ router.get("/was/health", function (req, res) {
       console.log(message)
       return res.json(message)
     } {
-      message = {"error": err, "message": "WAS 주소를 변경해주세요"}
+      message = {"error": err, "message": "WAS please change your address"}
       console.log(message)
       return res.json(message)
     }

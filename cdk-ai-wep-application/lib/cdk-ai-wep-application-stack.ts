@@ -96,13 +96,13 @@ export class CdkAiWepApplicationStack extends cdk.Stack {
       cluster: cluster,
       taskDefinition: taskDefinition_Web,
       serviceName: "app-web-service",
-      desiredCount: 2,
+      desiredCount: 3,
       assignPublicIp: false,
       securityGroups: [sg_Web],      
     }); 
     // Setup AutoScaling policy
     const scalingWeb = fargateService_Web.autoScaleTaskCount({ 
-      minCapacity: 2,
+      minCapacity: 3,
       maxCapacity: 4      
     });
     scalingWeb.scaleOnCpuUtilization('CpuScalingWeb', {
